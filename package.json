@@ -1,10 +1,11 @@
 {
   "name": "cheat-sheets",
-  "version": "1.0.430",
+  "version": "2.0.0",
   "author": "Scott Spence <spences10apps@gmail.com>(https://scottspence.me/)",
   "license": "MIT",
   "description": "Cheat sheets",
   "scripts": {
+    "postinstall": "patch-package",
     "breadbox": "breadbox --dest public/web_modules",
     "build": "linaria -o public/styles src/**/*.js && toast incremental",
     "serve": "npx http-server public",
