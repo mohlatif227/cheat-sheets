@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "breadbox": "breadbox --dest public/web_modules",
-    "build": "linaria -o public/styles src/**/*.js && toast incremental",
+    "build": "linaria -o public/styles src/**/*.js src/*.js && toast incremental",
     "serve": "npx serve public",
     "prepare": "breadbox --dest public/web_modules",
     "clean": "rm -rf .cache public && breadbox --dest public/web_modules",
