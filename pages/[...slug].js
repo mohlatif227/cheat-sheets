@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/core'
 import { Layout } from '@components/Layout'
 import components from '@components/MDXComponents'
 import { SHEETS_CONTENT_PATH } from '@config/constants'
@@ -9,10 +10,10 @@ export default function CheatSheet({ mdxSource, frontMatter }) {
 
   return (
     <Layout>
-      <div>
-        <h1>{frontMatter.title}</h1>
-        {content}
-      </div>
+      <Heading as="h1" size="2xl">
+        {frontMatter.title}
+      </Heading>
+      {content}
     </Layout>
   )
 }

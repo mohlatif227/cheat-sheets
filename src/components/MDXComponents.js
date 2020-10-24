@@ -1,17 +1,18 @@
-import { Text } from '@chakra-ui/core'
+import { Heading, Text } from '@chakra-ui/core'
 import { Code, Image } from '@mdnext/components'
 
 export default {
   code: Code,
   img: Image,
+  p: ({ children }) => <Text mb={4}>{children}</Text>,
   h1: ({ children }) => (
-    <Text fontSize="2xl" fontFamily="heading" mb={3}>
+    <Heading as="h1" size="2xl" mb={8}>
       {children}
-    </Text>
+    </Heading>
   ),
   h2: ({ children }) => (
-    <Text fontSize="xl" fontFamily="heading" my={3}>
+    <Heading as="h2" size="xl" mb={6}>
       {children}
-    </Text>
+    </Heading>
   ),
 }
