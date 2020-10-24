@@ -5,11 +5,11 @@ import Search from '@components/Search'
 import { SHEETS_CONTENT_PATH } from '@config/constants'
 import { getMdxContent } from '@utils/get-mdx-content'
 
-export default function BlogPage({ allMdx }) {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx)
+export default function CheatSheet({ allMdx }) {
+  const [filteredSheets, setFilteredSheets] = React.useState(allMdx)
 
   const handleFilter = data => {
-    setFilteredBlogs(data)
+    setFilteredSheets(data)
   }
 
   return (
@@ -21,10 +21,10 @@ export default function BlogPage({ allMdx }) {
           justify="center"
           alignItems="center"
         >
-          <Search blogs={allMdx} handleFilter={handleFilter} />
+          <Search sheets={allMdx} handleFilter={handleFilter} />
           <Stack spacing={[2, 6, 12]}>
-            {filteredBlogs?.map(blog => (
-              <ContentBox key={blog.slug} blog={blog} />
+            {filteredSheets?.map(sheet => (
+              <ContentBox key={sheet.slug} sheet={sheet} />
             ))}
           </Stack>
         </Stack>

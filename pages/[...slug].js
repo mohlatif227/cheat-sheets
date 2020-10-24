@@ -4,7 +4,7 @@ import { SHEETS_CONTENT_PATH } from '@config/constants'
 import { getMdxContent } from '@utils/get-mdx-content'
 import hydrate from 'next-mdx-remote/hydrate'
 
-export default function BlogPost({ mdxSource, frontMatter }) {
+export default function CheatSheet({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components })
 
   return (
@@ -18,8 +18,8 @@ export default function BlogPost({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getMdxContent(SHEETS_CONTENT_PATH)
-  const paths = posts.map(({ slug }) => ({
+  const sheets = await getMdxContent(SHEETS_CONTENT_PATH)
+  const paths = sheets.map(({ slug }) => ({
     params: {
       slug: slug.split('/'),
     },
@@ -32,18 +32,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const posts = await getMdxContent(SHEETS_CONTENT_PATH)
-  const postSlug = slug.join('/')
-  const [post] = posts.filter(post => post.slug === postSlug)
+  const sheets = await getMdxContent(SHEETS_CONTENT_PATH)
+  const sheetSlug = slug.join('/')
+  const [sheet] = sheets.filter(sheet => sheet.slug === sheetSlug)
 
-  if (!post) {
-    console.warn(`No content found for slug ${postSlug}`)
+  if (!sheet) {
+    console.warn(`No content found for slug ${sheetSlug}`)
   }
 
   return {
     props: {
-      mdxSource: post.mdx,
-      frontMatter: post.data,
+      mdxSource: sheet.mdx,
+      frontMatter: sheet.data,
     },
   }
 }

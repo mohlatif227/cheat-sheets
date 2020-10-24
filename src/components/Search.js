@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import { Flex, Input, Stack } from '@chakra-ui/core'
 import Fuse from 'fuse.js'
-
-import { Flex, Stack, Input } from '@chakra-ui/core'
-
+import React, { useState } from 'react'
 import TagList from './TagList'
 
 const fuseOptions = {
@@ -16,15 +14,15 @@ const fuseOptions = {
   keys: ['title', 'tags'],
 }
 
-export default function Search({ blogs, handleFilter }) {
+export default function Search({ sheets, handleFilter }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchTags, setSearchTags] = useState([])
-  const fuse = new Fuse(blogs, fuseOptions)
-  const tags = [...new Set(blogs.flatMap(({ tags }) => tags))]
+  const fuse = new Fuse(sheets, fuseOptions)
+  const tags = [...new Set(sheets.flatMap(({ tags }) => tags))]
 
   React.useEffect(() => {
     if (searchValue === '' && searchTags.length === 0) {
-      handleFilter(blogs)
+      handleFilter(sheets)
     } else {
       // Allow for a search for tag
       const formattedTags = [

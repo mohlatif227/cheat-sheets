@@ -1,11 +1,11 @@
 import { Box, Link, Stack, Text } from '@chakra-ui/core'
 import { Link as NextLink } from 'next/link'
 
-export default function ContentBox({ blog }) {
+export default function ContentBox({ sheet }) {
   return (
     <Link
       as={NextLink}
-      href={`/${blog.slug}`}
+      href={`/${sheet.slug}`}
       _hover={{ textDecor: 'none' }}
     >
       <Box
@@ -19,13 +19,13 @@ export default function ContentBox({ blog }) {
         <Stack>
           <Box>
             <Text _groupHover={{ textDecor: 'underline' }}>
-              {blog.title}
+              {sheet.title}
             </Text>
-            <Text> By: {blog.author}</Text>
-            <Text>{blog.description}</Text>
+            <Text> By: {sheet.author}</Text>
+            <Text>{sheet.description}</Text>
           </Box>
           <Stack direction="row" spacing={8}>
-            {blog.tags.map(tag => (
+            {sheet.tags.map(tag => (
               <Text key={tag}>#{tag}</Text>
             ))}
           </Stack>
