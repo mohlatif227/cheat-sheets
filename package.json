@@ -1,56 +1,61 @@
 {
   "name": "cheat-sheets",
-  "version": "1.0.438",
-  "author": "Scott Spence <spences10apps@gmail.com>(https://scottspence.me/)",
-  "license": "MIT",
   "description": "Cheat sheets",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/cheat-sheets.git"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx"
+  ],
+  "bugs": {
+    "url": "https://github.com/spences10/cheat-sheets/issues"
+  },
+  "homepage": "https://github.com/spences10/cheat-sheets#readme",
+  "author": {
+    "email": "yo@scottspence.dev",
+    "name": "Scott Spence",
+    "url": "https://scottspence.com"
+  },
+  "license": "MIT",
+  "main": "next.config.js",
   "scripts": {
-    "clean": "gatsby clean",
-    "build": "gatsby build",
-    "serve": "gatsby serve -p 8400 -o",
-    "dev": "gatsby develop -p 8488 -o",
+    "build": "next build",
+    "dev": "next -- -p 4544",
+    "start": "next start",
     "format": "pretty-quick"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.3",
+    "@chakra-ui/theme": "^1.0.0-rc.3",
+    "@chakra-ui/theme-tools": "^1.0.0-rc.3",
+    "@mdnext/components": "^0.1.0",
+    "fast-glob": "^3.2.4",
+    "fuse.js": "^6.4.1",
+    "gray-matter": "^4.0.2",
+    "js-cookie": "^2.2.1",
+    "next": "^9.5.2",
+    "next-cookies": "^2.0.3",
+    "next-mdx-remote": "^1.0.0",
+    "next-seo": "^4.7.3",
+    "prism-react-renderer": "^1.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "use-cloudinary": "^3.1.6"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^3.1.0"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "dependencies": {
-    "@mdx-js/mdx": "1.6.18",
-    "@mdx-js/react": "1.6.18",
-    "babel-plugin-styled-components": "1.11.1",
-    "gatsby": "2.24.73",
-    "gatsby-plugin-google-fonts-v2": "^0.0.6",
-    "gatsby-plugin-manifest": "2.4.34",
-    "gatsby-plugin-mdx": "1.2.46",
-    "gatsby-plugin-offline": "3.2.31",
-    "gatsby-plugin-react-helmet": "3.3.14",
-    "gatsby-plugin-robots-txt": "1.5.3",
-    "gatsby-plugin-sitemap": "2.4.15",
-    "gatsby-plugin-styled-components": "3.3.14",
-    "gatsby-plugin-zeit-now": "0.3.0",
-    "gatsby-remark-autolink-headers": "2.3.15",
-    "gatsby-remark-smartypants": "2.3.13",
-    "gatsby-source-filesystem": "2.3.34",
-    "prism-react-renderer": "1.1.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-github-btn": "1.2.0",
-    "react-helmet": "6.1.0",
-    "react-highlight-words": "0.16.0",
-    "react-live": "2.2.2",
-    "react-seo-component": "2.0.2",
-    "styled-breakpoints": "8.1.2",
-    "styled-components": "5.2.0",
-    "styled-reset": "4.2.3",
-    "victormono": "1.4.1"
-  },
-  "devDependencies": {
-    "gatsby-react-router-scroll": "3.0.14",
-    "husky": "4.3.0",
-    "prettier": "2.1.2",
-    "pretty-quick": "3.0.2"
   },
   "prettier": {
     "singleQuote": true,
@@ -59,14 +64,5 @@
     "printWidth": 70,
     "arrowParens": "avoid",
     "proseWrap": "always"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spences10/cheat-sheets.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/spences10/cheat-sheets/issues"
-  },
-  "homepage": "https://github.com/spences10/cheat-sheets#readme"
+  }
 }

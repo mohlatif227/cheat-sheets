@@ -2,7 +2,7 @@
 
 ## A searchable site of hints and tips!
 
-[![](/src/images/flying-cube.gif)](https://cheatsheets.xyz)
+[![](flying-cube.gif)](https://cheatsheets.xyz)
 
 ###### Image Credit [ccbyplz](https://www.deviantart.com/ccbyplz)
 
@@ -30,3 +30,11 @@ Current list of sheets:
 - Yarn
 - ZSH
 - Git
+
+## Uses
+
+- [MDNEXT] blog template, thanks Dom 🙏
+
+<!-- Links -->
+
+[mdnext]: https://github.com/domitriusclark/mdnext
